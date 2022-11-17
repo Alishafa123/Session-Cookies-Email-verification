@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-image: url("1.jpg");
+  background-size: cover;
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container img{
+  width: 250px;
+  margin-left: 190px;
+  margin-top: -25%;
+}
+
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+button{
+   height: 50px;
+   width: 500px;
+   align-items: center;
+   margin-left: 70px;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color: rgb(3, 3, 78);
+ }
+ button:hover{
+  transform: scale(0.99);
+  background:blue
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+.container img{
+  margin:  -100px 0px 0px 100px ;
+  width: 50%;
+  overflow-y: hidden;
+}
+button{
+  max-width: 100%;
+  max-height: 100px;
+  margin: 1px -1px;
+}
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+
+  </style>
+  <title>Registration Form</title>
+</head>
+<body  scroll="no" style="overflow: hidden">
+  <div class="container">
+    <img src="11.png" alt="avater">
+    <div class="title">Update Student </div>
+    <div class="content">
+      <form action="/updatestudent"   method="post" >
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" value="<%= data.name %>" name="name_"  id="name_id" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username"  value="<%= data.username %>"  name="username" id="u_id" required>
+            <span id="message"></span>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Enter your email" name="email" value="<%= data.email %>" id="email_" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" name="phone" value="<%= data.phonenumber %>" id="phone_" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password"  value="<%= data.password %>" name="password" id="password_" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Confirm your password"  id="password_c" value="<%= data.password %>" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Qualification</span>
+            <input type="text" placeholder="Enter your qualificatoin"  name="qualification" value="<%= data.qualification %>" id="qualification_"required>
+          </div>
+          <div class="input-box">
+            <span class="details">Age</span>
+            <input type="text" placeholder="Enter your age" name="age" value="<%= data.age %>"   id="age_" required>
+          </div>
+          <div>
+            <input type="file">
+          </div>
+        </div>
+       <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+<!-- <span><%= data.name %></span> -->
+</body>
+
+</html>
